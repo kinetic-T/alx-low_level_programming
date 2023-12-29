@@ -16,7 +16,7 @@ int main(void)
 		putchar (n);
 		n++;
 	} while (n <= '9');
-	
+
 	l = 'a';
 	while (l <= 'f')
 	{
