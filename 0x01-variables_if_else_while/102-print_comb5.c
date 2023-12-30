@@ -17,7 +17,7 @@ int main(void)
 		second = (n / 100) % 10;
 		third = (n % 100) / 10;
 		fourth = n % 10;
-		if (second < fourth && first <= third)
+		if (first <= third && second < fourth)
 		{
 			putchar ('0' + first);
 			putchar ('0' + second);
