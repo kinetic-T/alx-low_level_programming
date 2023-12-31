@@ -1,3 +1,4 @@
+#include <limits.h>
 #include "main.h"
 
 /**
@@ -25,7 +26,10 @@ int print_last_digit(int n)
 	}
 	else
 	{
-		value = (-1 * n) % 10;
+		if (n < 0 && n == INT_MIN)
+			value = (INT_MAX % 10) + 1;
+		else
+			value = (-1 * n) % 10;
 		_putchar('0' + value);
 		return (value);
 	}
