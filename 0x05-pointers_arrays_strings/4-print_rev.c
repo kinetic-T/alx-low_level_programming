@@ -18,12 +18,10 @@ void print_rev(char *str)
 		i++;
 		len++;
 	}
-	while (str[len] >= 0)
+	while (len >= 0)
 	{
 		_putchar(str[len]);
 		len--;
-		if (len < 0)
-			break;
 	}
 	_putchar('\n');
 }
