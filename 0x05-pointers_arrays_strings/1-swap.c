@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * swap_int(int *a, int *b)
- * @a: pointer to int
- * @b: pointer to int
+ * swap_int - function to swap values
+ * @a: pointer to int a
+ * @b: pointer to int b
  *
  * Return: nothing
  */
