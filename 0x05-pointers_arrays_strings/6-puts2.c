@@ -13,6 +13,8 @@ void puts2(char *str)
 
 	i = 0;
 	do {
+		if (str[i] == '\0')
+			break;
 		_putchar(str[i]);
 		i += 2;
 		if (str[i + 1] == '\0')
