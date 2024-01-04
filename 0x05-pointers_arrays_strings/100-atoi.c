@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-#include <ctype.h>
+#include <limits.h>
 
 /**
  * _atoi - converts str to int
@@ -25,6 +25,12 @@ int _atoi(char *s)
 
 		if (s[n] >= '0' && s[n] <= '9')
 		{
+			/*Check for overflow before performing the addition*/
+			if (result > (INT_MAX - (s[n] - '0')) / 10)
+			{
+				/*Handle overflow appropriately (e.g., set result to INT_MIN or INT_MAX)*/
+				return (sign == 1 ? INT_MAX : INT_MIN);
+			}
 			result = result * 10 + (s[n] - '0');
 			if (s[n + 1] == ' ')
 			{
