@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * puts_half - prints from center
@@ -18,12 +19,17 @@ void puts_half(char *str)
 		len++;
 		i++;
 	}
-	/*len--;*/
+	/*
+	 * printf("%d - %c\n", len, str[222]);
+	 * putchar(str[222])
+	 * putchar('\n');
+	 * len--;
+	 */
 
 	if (len % 2 == 0)
 		n = len / 2;
 	else
-		n = (len - 1) / 2;
+		n = ((len - 1) / 2 + 1);
 	do {
 		if (str[n] == '\0')
 			break;
