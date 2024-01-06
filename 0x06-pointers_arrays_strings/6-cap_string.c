@@ -9,7 +9,7 @@
 
 char *cap_string(char *c)
 {
-	int i, l, j;
+	int i, l;
 	/* created a string of separators */
 	char *sep = " \t\n,;.!?\"(){}";
 
@@ -23,22 +23,22 @@ char *cap_string(char *c)
 	i = 0;
 	while (c[i] != '\0')
 	{
-		/* loop through sep to determine a word separator */
-		j = 0;
-		while (j < sep_len)
+		k = 0;
+		while (sep[k] != '\0')
 		{
-			if (sep[j] == c[i])
+			l = 0;
+			while (l < 26)
 			{
-				/* if found convert to uppercase */
-				l = 0;
-				while (l < 26)
+				if (i == 0 && c[i] == ('a' + l))
+					c[i] = 'A' + l;
+				else if (c[i] == sep[k])
 				{
 					if (c[i + 1] == ('a' + l))
 						c[i + 1] = 'A' + l;
-					l++;
 				}
+				l++;
 			}
-			j++;
+			k++;
 		}
 		i++;
 	}
